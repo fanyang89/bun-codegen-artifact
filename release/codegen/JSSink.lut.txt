@@ -1,0 +1,120 @@
+
+/* Source for JSArrayBufferSinkPrototypeTableValues.lut.h
+@begin JSArrayBufferSinkPrototypeTable
+    close      ArrayBufferSink__doClose         ReadOnly|DontDelete|Function 0
+    flush      ArrayBufferSink__flush           ReadOnly|DontDelete|Function 1
+    end        ArrayBufferSink__end             ReadOnly|DontDelete|Function 0
+    start      ArrayBufferSink__start           ReadOnly|DontDelete|Function 1
+    write      ArrayBufferSink__write           ReadOnly|DontDelete|Function 1
+    ref        ArrayBufferSink__ref             ReadOnly|DontDelete|Function 0
+    unref      ArrayBufferSink__unref           ReadOnly|DontDelete|Function 0
+    _getFd      ArrayBufferSink__getFd           ReadOnly|DontDelete|Function 0
+@end
+*/
+
+
+/* Source for JSReadableArrayBufferSinkControllerPrototypeTableValues.lut.h
+@begin JSReadableArrayBufferSinkControllerPrototypeTable
+    close        JSReadableArrayBufferSinkController__close      ReadOnly|DontDelete|Function 0
+    flush        ArrayBufferSink__flush                          ReadOnly|DontDelete|Function 1
+    end          JSReadableArrayBufferSinkController__end        ReadOnly|DontDelete|Function 0
+    start        ArrayBufferSink__start                          ReadOnly|DontDelete|Function 1
+    write        ArrayBufferSink__write                          ReadOnly|DontDelete|Function 1
+@end
+*/
+
+/* Source for JSFileSinkPrototypeTableValues.lut.h
+@begin JSFileSinkPrototypeTable
+    close      FileSink__doClose         ReadOnly|DontDelete|Function 0
+    flush      FileSink__flush           ReadOnly|DontDelete|Function 1
+    end        FileSink__end             ReadOnly|DontDelete|Function 0
+    start      FileSink__start           ReadOnly|DontDelete|Function 1
+    write      FileSink__write           ReadOnly|DontDelete|Function 1
+    ref        FileSink__ref             ReadOnly|DontDelete|Function 0
+    unref      FileSink__unref           ReadOnly|DontDelete|Function 0
+    _getFd      FileSink__getFd           ReadOnly|DontDelete|Function 0
+@end
+*/
+
+
+/* Source for JSReadableFileSinkControllerPrototypeTableValues.lut.h
+@begin JSReadableFileSinkControllerPrototypeTable
+    close        JSReadableFileSinkController__close      ReadOnly|DontDelete|Function 0
+    flush        FileSink__flush                          ReadOnly|DontDelete|Function 1
+    end          JSReadableFileSinkController__end        ReadOnly|DontDelete|Function 0
+    start        FileSink__start                          ReadOnly|DontDelete|Function 1
+    write        FileSink__write                          ReadOnly|DontDelete|Function 1
+@end
+*/
+
+/* Source for JSHTTPResponseSinkPrototypeTableValues.lut.h
+@begin JSHTTPResponseSinkPrototypeTable
+    close      HTTPResponseSink__doClose         ReadOnly|DontDelete|Function 0
+    flush      HTTPResponseSink__flush           ReadOnly|DontDelete|Function 1
+    end        HTTPResponseSink__end             ReadOnly|DontDelete|Function 0
+    start      HTTPResponseSink__start           ReadOnly|DontDelete|Function 1
+    write      HTTPResponseSink__write           ReadOnly|DontDelete|Function 1
+    ref        HTTPResponseSink__ref             ReadOnly|DontDelete|Function 0
+    unref      HTTPResponseSink__unref           ReadOnly|DontDelete|Function 0
+    _getFd      HTTPResponseSink__getFd           ReadOnly|DontDelete|Function 0
+@end
+*/
+
+
+/* Source for JSReadableHTTPResponseSinkControllerPrototypeTableValues.lut.h
+@begin JSReadableHTTPResponseSinkControllerPrototypeTable
+    close        JSReadableHTTPResponseSinkController__close      ReadOnly|DontDelete|Function 0
+    flush        HTTPResponseSink__flush                          ReadOnly|DontDelete|Function 1
+    end          JSReadableHTTPResponseSinkController__end        ReadOnly|DontDelete|Function 0
+    start        HTTPResponseSink__start                          ReadOnly|DontDelete|Function 1
+    write        HTTPResponseSink__write                          ReadOnly|DontDelete|Function 1
+@end
+*/
+
+/* Source for JSHTTPSResponseSinkPrototypeTableValues.lut.h
+@begin JSHTTPSResponseSinkPrototypeTable
+    close      HTTPSResponseSink__doClose         ReadOnly|DontDelete|Function 0
+    flush      HTTPSResponseSink__flush           ReadOnly|DontDelete|Function 1
+    end        HTTPSResponseSink__end             ReadOnly|DontDelete|Function 0
+    start      HTTPSResponseSink__start           ReadOnly|DontDelete|Function 1
+    write      HTTPSResponseSink__write           ReadOnly|DontDelete|Function 1
+    ref        HTTPSResponseSink__ref             ReadOnly|DontDelete|Function 0
+    unref      HTTPSResponseSink__unref           ReadOnly|DontDelete|Function 0
+    _getFd      HTTPSResponseSink__getFd           ReadOnly|DontDelete|Function 0
+@end
+*/
+
+
+/* Source for JSReadableHTTPSResponseSinkControllerPrototypeTableValues.lut.h
+@begin JSReadableHTTPSResponseSinkControllerPrototypeTable
+    close        JSReadableHTTPSResponseSinkController__close      ReadOnly|DontDelete|Function 0
+    flush        HTTPSResponseSink__flush                          ReadOnly|DontDelete|Function 1
+    end          JSReadableHTTPSResponseSinkController__end        ReadOnly|DontDelete|Function 0
+    start        HTTPSResponseSink__start                          ReadOnly|DontDelete|Function 1
+    write        HTTPSResponseSink__write                          ReadOnly|DontDelete|Function 1
+@end
+*/
+
+/* Source for JSNetworkSinkPrototypeTableValues.lut.h
+@begin JSNetworkSinkPrototypeTable
+    close      NetworkSink__doClose         ReadOnly|DontDelete|Function 0
+    flush      NetworkSink__flush           ReadOnly|DontDelete|Function 1
+    end        NetworkSink__end             ReadOnly|DontDelete|Function 0
+    start      NetworkSink__start           ReadOnly|DontDelete|Function 1
+    write      NetworkSink__write           ReadOnly|DontDelete|Function 1
+    ref        NetworkSink__ref             ReadOnly|DontDelete|Function 0
+    unref      NetworkSink__unref           ReadOnly|DontDelete|Function 0
+    _getFd      NetworkSink__getFd           ReadOnly|DontDelete|Function 0
+@end
+*/
+
+
+/* Source for JSReadableNetworkSinkControllerPrototypeTableValues.lut.h
+@begin JSReadableNetworkSinkControllerPrototypeTable
+    close        JSReadableNetworkSinkController__close      ReadOnly|DontDelete|Function 0
+    flush        NetworkSink__flush                          ReadOnly|DontDelete|Function 1
+    end          JSReadableNetworkSinkController__end        ReadOnly|DontDelete|Function 0
+    start        NetworkSink__start                          ReadOnly|DontDelete|Function 1
+    write        NetworkSink__write                          ReadOnly|DontDelete|Function 1
+@end
+*/

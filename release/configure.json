@@ -1,0 +1,5 @@
+{
+  "buildType": "Release",
+  "webkit": "prebuilt",
+  "lto": false
+}

@@ -1,0 +1,221 @@
+// @bun
+// build/debug/tmp_modules/node/timers.promises.ts
+var $;
+var { validateBoolean, validateAbortSignal, validateObject, validateNumber } = __intrinsic__getInternalField(__intrinsic__internalModuleRegistry, 68) || __intrinsic__createInternalModuleById(68);
+var symbolAsyncIterator = Symbol.asyncIterator;
+var setImmediateGlobal = globalThis.setImmediate;
+var setTimeoutGlobal = globalThis.setTimeout;
+var setIntervalGlobal = globalThis.setInterval;
+function asyncIterator({ next: nextFunction, return: returnFunction }) {
+  const result = {};
+  if (typeof nextFunction === "function") {
+    result.next = nextFunction;
+  }
+  if (typeof returnFunction === "function") {
+    result.return = returnFunction;
+  }
+  result[symbolAsyncIterator] = function() {
+    return this;
+  };
+  return result;
+}
+function setTimeout(after = 1, value, options = {}) {
+  const arguments_ = [].concat(value ?? []);
+  try {
+    if (typeof after != "number") {
+      validateNumber(after, "delay");
+    }
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  try {
+    validateObject(options, "options");
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  const { signal, ref: reference = true } = options;
+  try {
+    validateAbortSignal(signal, "options.signal");
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  try {
+    validateBoolean(reference, "options.ref");
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  if (signal?.aborted) {
+    return __intrinsic__Promise.__intrinsic__reject(__intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason }));
+  }
+  let onCancel;
+  const returnValue = new __intrinsic__Promise((resolve, reject) => {
+    const timeout = setTimeoutGlobal(() => resolve(value), after, ...arguments_);
+    if (!reference) {
+      timeout?.unref?.();
+    }
+    if (signal) {
+      onCancel = () => {
+        clearTimeout(timeout);
+        reject(__intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason }));
+      };
+      signal.addEventListener("abort", onCancel);
+    }
+  });
+  return typeof onCancel !== "undefined" ? returnValue.finally(() => signal.removeEventListener("abort", onCancel)) : returnValue;
+}
+function setImmediate(value, options = {}) {
+  try {
+    validateObject(options, "options");
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  const { signal, ref: reference = true } = options;
+  try {
+    validateAbortSignal(signal, "options.signal");
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  try {
+    validateBoolean(reference, "options.ref");
+  } catch (error) {
+    return __intrinsic__Promise.__intrinsic__reject(error);
+  }
+  if (signal?.aborted) {
+    return __intrinsic__Promise.__intrinsic__reject(__intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason }));
+  }
+  let onCancel;
+  const returnValue = new __intrinsic__Promise((resolve, reject) => {
+    const immediate = setImmediateGlobal(() => resolve(value));
+    if (!reference) {
+      immediate?.unref?.();
+    }
+    if (signal) {
+      onCancel = () => {
+        clearImmediate(immediate);
+        reject(__intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason }));
+      };
+      signal.addEventListener("abort", onCancel);
+    }
+  });
+  return typeof onCancel !== "undefined" ? returnValue.finally(() => signal.removeEventListener("abort", onCancel)) : returnValue;
+}
+function setInterval(after = 1, value, options = {}) {
+  try {
+    if (typeof after != "number") {
+      validateNumber(after, "delay");
+    }
+  } catch (error) {
+    return asyncIterator({
+      next: function() {
+        return __intrinsic__Promise.__intrinsic__reject(error);
+      }
+    });
+  }
+  try {
+    validateObject(options, "options");
+  } catch (error) {
+    return asyncIterator({
+      next: function() {
+        return __intrinsic__Promise.__intrinsic__reject(error);
+      }
+    });
+  }
+  const { signal, ref: reference = true } = options;
+  try {
+    validateAbortSignal(signal, "options.signal");
+  } catch (error) {
+    return asyncIterator({
+      next: function() {
+        return __intrinsic__Promise.__intrinsic__reject(error);
+      }
+    });
+  }
+  try {
+    validateBoolean(reference, "options.ref");
+  } catch (error) {
+    return asyncIterator({
+      next: function() {
+        return __intrinsic__Promise.__intrinsic__reject(error);
+      }
+    });
+  }
+  if (signal?.aborted) {
+    return asyncIterator({
+      next: function() {
+        return __intrinsic__Promise.__intrinsic__reject(__intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason }));
+      }
+    });
+  }
+  let onCancel, interval;
+  try {
+    let notYielded = 0;
+    let callback;
+    interval = setIntervalGlobal(() => {
+      notYielded++;
+      if (callback) {
+        callback();
+        callback = __intrinsic__undefined;
+      }
+    }, after);
+    if (!reference) {
+      interval?.unref?.();
+    }
+    if (signal) {
+      onCancel = () => {
+        clearInterval(interval);
+        if (callback) {
+          callback();
+          callback = __intrinsic__undefined;
+        }
+      };
+      signal.addEventListener("abort", onCancel);
+    }
+    return asyncIterator({
+      next: function() {
+        return new __intrinsic__Promise((resolve, reject) => {
+          if (!signal?.aborted) {
+            if (notYielded === 0) {
+              callback = resolve;
+            } else {
+              resolve();
+            }
+          } else if (notYielded === 0) {
+            reject(__intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason }));
+          } else {
+            resolve();
+          }
+        }).then(() => {
+          if (notYielded > 0) {
+            notYielded = notYielded - 1;
+            return { done: false, value };
+          } else if (signal?.aborted) {
+            throw __intrinsic__makeAbortError(__intrinsic__undefined, { cause: signal.reason });
+          }
+          return { done: true };
+        });
+      },
+      return: function() {
+        clearInterval(interval);
+        signal?.removeEventListener("abort", onCancel);
+        return __intrinsic__Promise.__intrinsic__resolve({});
+      }
+    });
+  } catch {
+    return asyncIterator({
+      next: function() {
+        clearInterval(interval);
+        signal?.removeEventListener("abort", onCancel);
+      }
+    });
+  }
+}
+$ = {
+  setTimeout,
+  setImmediate,
+  setInterval,
+  scheduler: {
+    wait: (delay, options) => setTimeout(delay, __intrinsic__undefined, options),
+    yield: setImmediate
+  }
+};
+$$EXPORT$$($).$$EXPORT_END$$;

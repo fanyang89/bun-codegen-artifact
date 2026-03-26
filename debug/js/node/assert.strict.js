@@ -1,0 +1,4 @@
+(function (){"use strict";// build/debug/tmp_modules/node/assert.strict.ts
+var $;
+$ = (@getInternalField(@internalModuleRegistry, 85) || @createInternalModuleById(85)).strict;
+return $})

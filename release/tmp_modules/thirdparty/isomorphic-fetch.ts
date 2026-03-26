@@ -1,0 +1,11 @@
+// @ts-nocheck
+var $;// GENERATED TEMP FILE - DO NOT EDIT
+// Sourced from src/js/thirdparty/isomorphic-fetch.ts
+
+
+const bunFetch = Bun.fetch;
+const fetch = (...args: Parameters<typeof bunFetch>) => bunFetch(...args);
+fetch.default = fetch;
+fetch.fetch = fetch;
+$ = fetch;
+;$$EXPORT$$($).$$EXPORT_END$$;
